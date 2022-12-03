@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title class="titulo">
-      Refall
+      productos
     </ion-title>
 
     <ion-buttons slot="start">
@@ -17,7 +17,9 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-  <div class="titulohome">Refall</div>
+
+  <div *ngFor="let producto of productos">
+    <app-producto [producto]= producto></app-producto>
+  </div>
 </ion-content>

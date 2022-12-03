@@ -7,10 +7,12 @@ import firebase from 'firebase/compat/app';
 })
 export class FirebaseauthService {
 
-  constructor(public auth: AngularFireAuth) { }
+  constructor(public auth: AngularFireAuth) {
+    this.getUid();
+   }
 
   loginGoogle() {
-      this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+      return this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
 
   login(email: string, password: string){
@@ -18,11 +20,24 @@ export class FirebaseauthService {
     
   }
   logout() {
-    this.auth.signOut();
+    return this.auth.signOut();
   }
 
   registrar(email: string, password: string) {
-    this.auth.createUserWithEmailAndPassword(email, password)
+    return this.auth.createUserWithEmailAndPassword(email, password)
   }
+
+  async getUid() {
+    const user = await this.auth.currentUser;
+    if (user === null) {
+      return null;
+    } else {
+      return user.uid;
+    }
+  }
+
+  stateAuth() {
+    return this.auth.authState;
+  }  
 
 }

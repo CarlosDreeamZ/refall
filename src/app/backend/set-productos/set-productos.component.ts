@@ -46,8 +46,10 @@ export class SetProductosComponent implements OnInit {
     this.showLoading();
     const path = 'Productos';
     const name = this.newProducto.nombre;
-    const res = await this.firestorageService.uploadImage(this.newFile, path, name);
-    this.newProducto.imagen = res;
+    if (this.newFile !== undefined) {
+      const res = await this.firestorageService.uploadImage(this.newFile, path, name);
+      this.newProducto.imagen = res;
+    }
     this.firestoreService.createDoc(this.newProducto, this.path, this.newProducto.id).then( res => {
       this.loading.dismiss();
       this.presentToast('Guardado con exito');

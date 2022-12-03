@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titulo">
+      Login
+    </ion-title>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="openMenu()">
+        <ion-icon color="warning" slot="icon-only" name="grid-outline"></ion-icon>        
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 class="normal encabezado">Ingrese sus datos</h2>
+    <ion-item>
+      <ion-label  class="normal" position="floating">
+        Email: 
+      </ion-label>
+      <ion-input [(ngModel)]="cliente.email" class="normal" type="string" inputmode="text">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  class="normal" position="floating">
+        Contraseña: 
+      </ion-label>
+      <ion-input [(ngModel)]="cliente.password" class="normal" type="string" inputmode="text">
+      </ion-input>
+    </ion-item>
+
+      <div class="normal btn_registrar">
+        <ion-button (click)="ingresar()" class="normal" color="warning">Iniciar Sesion</ion-button>  
+        <ion-button [routerLink]="['/perfil']" class="normal" color="danger">Registrarse</ion-button>  
+      </div>
+   
+</ion-content>

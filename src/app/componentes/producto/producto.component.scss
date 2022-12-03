@@ -1,0 +1,25 @@
+.img-producto{
+    width: 250px;
+    margin: auto;
+}
+
+.precio{
+    margin: 0px 20px 10px 0px;
+    text-align: right;
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    color: darkgray;
+    font-weight: bold;
+}
+
+.icon-producto{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 30px;
+    margin: 10px;
+    background: red;
+    padding: 10px;
+    border-radius: 100%;
+    color: white;
+}
